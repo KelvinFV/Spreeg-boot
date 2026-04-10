@@ -1,0 +1,17 @@
+package com.example.arquiteturaspring;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ArquiteturaspringApplication {
+
+	public static void main(String[] args) {
+		//SpringApplication.run(ArquiteturaspringApplication.class, args);
+
+		SpringApplication builder = new SpringApplication(ArquiteturaspringApplication.class);
+		
+		builder.run(args);
+	}
+
+}
