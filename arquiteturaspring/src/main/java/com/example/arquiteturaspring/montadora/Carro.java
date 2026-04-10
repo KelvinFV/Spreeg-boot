@@ -1,5 +1,6 @@
 package com.example.arquiteturaspring.montadora;
 import java.awt.Color;
+import java.awt.*;
 
 public class Carro {
 
@@ -35,6 +36,15 @@ public class Carro {
     }
     public void setMontadora(Montadora montadora) {
         this.montadora = montadora;
+    }
+
+    public CarroStatus darIngnicao(Chave chave){
+
+        if(chave.getMontadora() != this.montadora){
+            return new CarroStatus("Chave Invalida");
+        }
+
+        return new CarroStatus("Carro Ligado, com motor" + motor);
     }
 
 }
