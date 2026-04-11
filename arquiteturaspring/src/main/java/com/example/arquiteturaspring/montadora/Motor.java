@@ -7,6 +7,8 @@ public class Motor {
     private Integer cilindros;
     private Double litragaem;
     private TipoMotor tipoMotor;
+
+
     public String getModelo() {
         return modelo;
     }
@@ -38,6 +40,16 @@ public class Motor {
         this.tipoMotor = tipoMotor;
     }
 
-
+    @Override
+    public String toString(){
+        return "Motor{" +
+                "modelo='" + modelo + '\'' +
+                ", cavalos=" + cavalos +
+                ", cilindros=" + cilindros +
+                ", litragaem=" + litragaem +
+                ", tipoMotor=" + tipoMotor +
+                '}';
+    }
+    
 
 }
