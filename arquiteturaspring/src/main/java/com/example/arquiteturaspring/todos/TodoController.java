@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
@@ -15,7 +17,12 @@ public class TodoController {
     private TodoService service;
 
     public TodoController(TodoService service) {
+       try{
         this.service = service;
+       }catch(IllegalArgumentException e){
+          var mensagemErro = e.getMessage();
+          throw new ResponseStatusException(HttpStatus.CONFLICT, mensagemErro);
+       }
     }
 
     @PostMapping
